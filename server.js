@@ -1,11 +1,12 @@
 require('dotenv').config()
 const express = require('express');
-const axios = require('axios').default;
-const YAPI_KEY = process.env.YAPI_KEY
+const cors = require("cors");
+const axios = require("axios").default;
+const YAPI_KEY = process.env.YAPI_KEY;
 const app = express();
 const port = process.env.PORT || 5000;
 
-
+app.use(cors());
 
 app.get('/events', async (req, res) => {
     console.log(req.query)
